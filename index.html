@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Radha Swami Tyre Agency | Billing Software</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="appSidebar">
+
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close menu"
+        onclick="document.getElementById('appSidebar')?.classList.remove('open');document.getElementById('sidebarBackdrop')?.classList.remove('show');document.body.classList.remove('drawer-open');document.body.style.overflow='';">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 14 2-6h12l2 6v4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+
+            <div>
+                <h2>Radha Swami</h2>
+                <span>Tyre Agency</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button class="menu-item active" data-page="dashboard">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v9h9A9 9 0 0 0 12 3Z" fill="currentColor"/><path d="M10 5.2A9 9 0 1 0 18.8 14H10V5.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="menu-item" data-page="billing" onclick="window.location.href='billing.html'">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v5h5M9 12h6M9 16h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                <span>New Billing</span>
+            </button>
+
+            <button class="menu-item" data-page="products" onclick="window.location.href='products.html'">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 8 9-5 9 5-9 5-9-5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 8v9l9 5 9-5V8M12 13v9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                <span>Products</span>
+            </button>
+
+            <button class="menu-item" data-page="inventory">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                <span>Inventory</span>
+            </button>
+
+            <button class="menu-item" data-page="purchase">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                <span>Purchase</span>
+            </button>
+
+            <button class="menu-item" data-page="suppliers">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+                <span>Suppliers</span>
+            </button>
+
+            <button class="menu-item" data-page="vehicles">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 14 2-6h12l2 6v4H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="8" cy="18" r="1.7" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="18" r="1.7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7 8h10" stroke="currentColor" stroke-width="1.7"/></svg>
+                <span>Vehicles</span>
+            </button>
+
+            <button class="menu-item" data-page="ledger">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A3.5 3.5 0 0 1 7.5 2H12v18H7.5A3.5 3.5 0 0 0 4 23V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H12v18h4.5A3.5 3.5 0 0 1 20 23V5.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span>Due / Ledger</span>
+            </button>
+
+            <button class="menu-item" data-page="customers">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0-1-5M16 14a5 5 0 0 1 5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                <span>Customers</span>
+            </button>
+
+            <button class="menu-item" data-page="invoices">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                <span>Invoices</span>
+            </button>
+
+            <button class="menu-item" data-page="reports">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m7 15 4-4 3 2 5-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Reports</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="shop-status">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>Shop Active</strong>
+                    <small>System Online</small>
+                </div>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    RS
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Owner</small>
+                </div>
+
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.2 2.2 2.5.7 2.1-1.1 1.5 1.5-1.1 2.1.7 2.5L21 12l-2.2 1.2-.7 2.5 1.1 2.1-1.5 1.5-2.1-1.1-2.5.7L12 21l-1.2-2.2-2.5-.7-2.1 1.1-1.5-1.5 1.1-2.1-.7-2.5L3 12l2.2-1.2.7-2.5-1.1-2.1 1.5-1.5 2.1 1.1 2.5-.7L12 3Z" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"
+        onclick="document.getElementById('appSidebar')?.classList.remove('open');this.classList.remove('show');document.body.classList.remove('drawer-open');document.body.style.overflow='';"></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="mobile-brand">
+                <button id="menuToggle" aria-label="Open menu"
+        onclick="document.getElementById('appSidebar')?.classList.add('open');document.getElementById('sidebarBackdrop')?.classList.add('show');document.body.classList.add('drawer-open');document.body.style.overflow='hidden';">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <strong>Radha Swami Tyre Agency</strong>
+            </div>
+
+            <div class="topbar-left">
+
+                <button class="menu-trigger" id="desktopMenuToggle" aria-label="Open menu"
+        onclick="document.getElementById('appSidebar')?.classList.add('open');document.getElementById('sidebarBackdrop')?.classList.add('show');document.body.classList.add('drawer-open');document.body.style.overflow='hidden';">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <div class="topbar-title-block">
+                    <strong>RADHA SWAMI TYRE AGENCY</strong>
+                    <span>Billing &amp; Inventory Management</span>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="date-box">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+                <button class="icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        RS
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Radha Swami</strong>
+                        <span>Owner</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <section class="content">
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <div class="page active-page" id="dashboard">
+
+                <div class="page-heading">
+
+                    <div>
+                        <div class="dashboard-kicker">BUSINESS OVERVIEW</div>
+                        <h1>Radha Swami Tyre Agency</h1>
+                        <p>Professional billing, inventory &amp; customer management dashboard.</p>
+                    </div>
+
+                    <div class="dashboard-actions-v6">
+                        <button class="products-btn-v6" onclick="window.location.href='products.html'">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                                <path d="M4 7.5 12 12l8-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                            </svg>
+                            Products
+                        </button>
+                        <button class="primary-btn" onclick="window.location.href='billing.html'">
+                            <i class="fa-solid fa-plus"></i>
+                            New Bill
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+
+                        <div>
+                            <span>Today's Sales</span>
+                            <h2 id="todaySales">₹0</h2>
+                            <small class="positive">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                Today
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v5h5M9 12h6M9 16h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                        </div>
+
+                        <div>
+                            <span>Today's Bills</span>
+                            <h2 id="todayBills">0</h2>
+                            <small>Invoices generated</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <span>Total Products</span>
+                            <h2 id="totalProducts">0</h2>
+                            <small>Items in inventory</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon red">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div>
+                            <span>Low Stock</span>
+                            <h2 id="lowStock">0</h2>
+                            <small>Need attention</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DASHBOARD BODY -->
+
+                <div class="dashboard-grid">
+
+                    <div class="panel sales-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Sales Overview</h3>
+                                <p>Last 7 days</p>
+                            </div>
+
+                            <select id="salesPeriod">
+                                <option>Last 7 Days</option>
+                                <option>This Month</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-y">
+                                <span>₹50k</span>
+                                <span>₹40k</span>
+                                <span>₹30k</span>
+                                <span>₹20k</span>
+                                <span>₹10k</span>
+                                <span>₹0</span>
+                            </div>
+
+                            <div class="bars">
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:45%"></div>
+                                    <span>Mon</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:62%"></div>
+                                    <span>Tue</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:52%"></div>
+                                    <span>Wed</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:78%"></div>
+                                    <span>Thu</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:66%"></div>
+                                    <span>Fri</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:88%"></div>
+                                    <span>Sat</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:70%"></div>
+                                    <span>Sun</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Low Stock Items</h3>
+                                <p>Products running low</p>
+                            </div>
+
+                            <button class="text-btn" onclick="openPage('inventory')">
+                                View All
+                            </button>
+
+                        </div>
+
+                        <div id="lowStockList" class="stock-list"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT INVOICES -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Invoices</h3>
+                            <p>Latest billing activity</p>
+                        </div>
+
+                        <button class="text-btn" onclick="openPage('invoices')">
+                            View All
+                        </button>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Invoice</th>
+                                    <th>Customer</th>
+                                    <th>Vehicle</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="dashboardInvoices"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= BILLING ================= -->
+
+            <div class="page" id="billing">
+
+                <div class="billing-v5-shell">
+
+                    <header class="bill-v5-header">
+                        <div>
+                            <div class="bill-v5-eyebrow">BILLING DESK</div>
+                            <h1>New Bill</h1>
+                            <p>Create a clean, professional customer invoice.</p>
+                        </div>
+
+                        <div class="bill-v5-header-right">
+                            <div class="invoice-number-v5">
+                                <span>INVOICE</span>
+                                <strong id="invoiceNumber">RS-0001</strong>
+                            </div>
+                            <button class="icon-close-v5" onclick="closeBillingPopup()" aria-label="Close New Bill">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </header>
+
+                    <div class="bill-v5-grid">
+
+                        <main class="bill-v5-main">
+
+                            <section class="bill-card-v5">
+                                <div class="bill-card-title">
+                                    <span class="title-icon-v5">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Customer Details</strong>
+                                        <small>Enter customer information for this invoice.</small>
+                                    </div>
+                                </div>
+
+                                <div class="customer-v5-grid">
+                                    <label class="field-v5">
+                                        <span>Customer Name <b>*</b></span>
+                                        <div class="input-v5">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                                            </svg>
+                                            <input id="customerName" type="text" placeholder="Enter customer name">
+                                        </div>
+                                    </label>
+
+                                    <label class="field-v5">
+                                        <span>Mobile Number</span>
+                                        <div class="input-v5">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M6.5 2h11A2.5 2.5 0 0 1 20 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+                                                <path d="M10 19h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                                            </svg>
+                                            <input id="customerMobile" type="tel" placeholder="10 digit mobile" maxlength="10" inputmode="numeric">
+                                        </div>
+                                    </label>
+                                </div>
+                            </section>
+
+                            <section class="bill-card-v5">
+                                <div class="bill-card-title">
+                                    <span class="title-icon-v5">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.8" rx="2"/>
+                                            <path d="M8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Items & MRP</strong>
+                                        <small>Select the item, check MRP and add quantity.</small>
+                                    </div>
+                                </div>
+
+                                <div class="item-entry-v5">
+                                    <label class="field-v5 item-product-field">
+                                        <span>Item / Saaman <b>*</b></span>
+                                        <select id="billingProductSelect">
+                                            <option value="">Choose tyre / item</option>
+                                        </select>
+                                    </label>
+
+                                    <div class="mrp-display-v5">
+                                        <span>MRP / Rate</span>
+                                        <strong id="selectedProductMRP">₹0.00</strong>
+                                    </div>
+
+                                    <label class="field-v5 qty-field-v5">
+                                        <span>Qty</span>
+                                        <div class="qty-control-v5">
+                                            <button type="button" onclick="changeBillingQty(-1)">−</button>
+                                            <input id="billingProductQty" type="number" value="1" min="1">
+                                            <button type="button" onclick="changeBillingQty(1)">+</button>
+                                        </div>
+                                    </label>
+
+                                    <button type="button" class="add-item-v5" onclick="addSelectedBillingProduct()">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                        Add Item
+                                    </button>
+                                </div>
+
+                                <div class="items-table-v5-wrap">
+                                    <table class="items-table-v5">
+                                        <thead>
+                                            <tr>
+                                                <th>Item / Saaman</th>
+                                                <th>MRP</th>
+                                                <th>Qty</th>
+                                                <th>GST</th>
+                                                <th>Amount</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="cartTable"></tbody>
+                                    </table>
+
+                                    <div id="emptyBillItems" class="empty-items-v5">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M4 5h16v14H4z" fill="none" stroke="currentColor" stroke-width="1.6" rx="2"/>
+                                            <path d="M8 9h8M8 13h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        </svg>
+                                        <strong>No items added</strong>
+                                        <span>Choose a saaman above to add it to the bill.</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="bill-card-v5 payment-card-v5">
+                                <div class="bill-card-title">
+                                    <span class="title-icon-v5">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                                            <path d="M3 10h18M7 15h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Payment</strong>
+                                        <small>Select payment mode and received amount.</small>
+                                    </div>
+                                </div>
+
+                                <div class="payment-v5-options">
+                                    <button class="payment-v5 active" data-payment="Cash"><span>Cash</span></button>
+                                    <button class="payment-v5" data-payment="UPI"><span>UPI</span></button>
+                                    <button class="payment-v5" data-payment="Card"><span>Card</span></button>
+                                    <button class="payment-v5" data-payment="Due"><span>Due</span></button>
+                                </div>
+
+                                <input type="hidden" id="paymentMethod" value="Cash">
+
+                                <div class="received-v5">
+                                    <label class="field-v5">
+                                        <span>Amount Received</span>
+                                        <div class="input-v5 money-input-v5">
+                                            <span>₹</span>
+                                            <input id="amountReceived" type="number" min="0" step="0.01" placeholder="0.00">
+                                        </div>
+                                    </label>
+
+                                    <div class="payment-mini-v5">
+                                        <div><span>Received</span><strong id="receivedPreview">₹0</strong></div>
+                                        <div><span>Due</span><strong id="balancePreview">₹0</strong></div>
+                                        <div><span>Change</span><strong id="changePreview">₹0</strong></div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </main>
+
+                        <aside class="bill-v5-side">
+
+                            <section class="bill-summary-v5">
+                                <div class="summary-head-v5">
+                                    <div>
+                                        <span>INVOICE SUMMARY</span>
+                                        <h2>Bill Total</h2>
+                                    </div>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 3h10v18H7z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+                                        <path d="M9.5 7h5M9.5 11h5M9.5 15h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+
+                                <div class="summary-v5-line"><span>Subtotal</span><strong id="subtotal">₹0.00</strong></div>
+
+                                <div class="summary-v5-discount">
+                                    <span>Discount</span>
+                                    <div><input type="number" id="discount" value="0" min="0"><b>₹</b></div>
+                                </div>
+
+                                <div class="summary-v5-line"><span>Taxable Amount</span><strong id="taxable">₹0.00</strong></div>
+                                <div class="summary-v5-line"><span>CGST</span><strong id="cgst">₹0.00</strong></div>
+                                <div class="summary-v5-line"><span>SGST</span><strong id="sgst">₹0.00</strong></div>
+
+                                <div class="grand-v5">
+                                    <span>Grand Total</span>
+                                    <strong id="grandTotal">₹0.00</strong>
+                                </div>
+
+                                <button class="generate-v5" onclick="generateBill()">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M5 4h14v16H5z" fill="none" stroke="currentColor" stroke-width="1.8" rx="2"/>
+                                        <path d="m8 13 2.2 2.2L16 9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Generate Invoice
+                                </button>
+
+                                <button class="clear-v5" onclick="clearBill()">
+                                    Clear Bill
+                                </button>
+                            </section>
+
+                            <div class="secure-note-v5">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+                                    <path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <div>
+                                    <strong>Ready for billing</strong>
+                                    <span>Your invoice data is stored locally in this browser.</span>
+                                </div>
+                            </div>
+
+                        </aside>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <div class="page" id="products">
+                <div class="products-v6-shell">
+                    <div class="products-head-v6">
+                        <div>
+                            <div class="products-kicker-v6">PRODUCT CATALOG</div>
+                            <h1>Products</h1>
+                            <p>Tyres, batteries and shop items — select products for quick billing.</p>
+                        </div>
+                        <div class="products-head-stats-v6">
+                            <div><strong id="productCatalogCount">0</strong><span>Products</span></div>
+                            <div><strong id="selectedProductCountTop">0</strong><span>Selected</span></div>
+                        </div>
+                    </div>
+
+                    <div class="product-toolbar-v6">
+                        <div class="product-search-v6">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16.5 16.5 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                            <input id="catalogSearch" type="search" placeholder="Search product, brand, size...">
+                        </div>
+                        <div class="product-filters-v6" id="productFiltersV6">
+                            <button class="filter-v6 active" data-category="all">All</button>
+                            <button class="filter-v6" data-category="Bike Tyres">Bike Tyres</button>
+                            <button class="filter-v6" data-category="Car Tyres">Car Tyres</button>
+                            <button class="filter-v6" data-category="Bike Battery">Bike Battery</button>
+                            <button class="filter-v6" data-category="Car Battery">Car Battery</button>
+                        </div>
+                    </div>
+
+                    <div class="product-grid-v6" id="productCatalogGrid"></div>
+                </div>
+
+                <button class="selected-items-fab-v6" id="selectedItemsFab" onclick="openSelectedProductsDrawer()">
+                    <span class="selected-fab-icon-v6">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5z" fill="none" stroke="currentColor" stroke-width="1.8" rx="2"/><path d="m8 12 2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span>Selected Items</span>
+                    <b id="selectedItemsBadge">0</b>
+                </button>
+            </div>
+
+            <!-- ================= INVENTORY ================= -->
+
+            <div class="page" id="inventory">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Inventory</h1>
+                        <p>Manage your tyre stock.</p>
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        onclick="openProductModal()"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add Product
+                    </button>
+
+                </div>
+
+
+                <div class="inventory-tools">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            id="inventorySearch"
+                            placeholder="Search inventory..."
+                        >
+
+                    </div>
+
+                    <select id="inventoryFilter">
+                        <option value="all">All Products</option>
+                        <option value="low">Low Stock</option>
+                        <option value="out">Out of Stock</option>
+                    </select>
+
+                </div>
+
+
+                <div class="inventory-grid" id="inventoryGrid"></div>
+
+            </div>
+
+
+            <!-- ================= CUSTOMERS ================= -->
+
+            <div class="page" id="customers">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Customers</h1>
+                        <p>Customer and vehicle records.</p>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Mobile</th>
+                                    <th>Vehicle</th>
+                                    <th>Total Bills</th>
+                                    <th>Total Purchase</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="customerTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= INVOICES ================= -->
+
+            <div class="page" id="invoices">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Invoices</h1>
+                        <p>Complete billing history.</p>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="inventory-tools">
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                id="invoiceSearch"
+                                placeholder="Search invoice or customer..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Invoice</th>
+                                    <th>Customer</th>
+                                    <th>Vehicle</th>
+                                    <th>Date</th>
+                                    <th>Payment</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="invoiceTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= PURCHASE ================= -->
+
+            <div class="page" id="purchase">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Purchase Stock</h1>
+                        <p>Purchase tyres from suppliers and increase stock.</p>
+                    </div>
+                </div>
+
+                <div class="two-column">
+                    <div class="panel">
+                        <div class="section-title">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Purchase Entry
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Supplier</label>
+                                <select id="purchaseSupplier"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product</label>
+                                <select id="purchaseProduct"></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="number" id="purchaseQty" min="1" value="1">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Purchase Price / Unit</label>
+                                <input type="number" id="purchasePrice" min="0" placeholder="Enter purchase price">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Invoice / Reference No.</label>
+                                <input type="text" id="purchaseRef" placeholder="Supplier invoice no.">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Payment</label>
+                                <select id="purchasePayment">
+                                    <option value="Cash">Cash</option>
+                                    <option value="UPI">UPI</option>
+                                    <option value="Bank">Bank</option>
+                                    <option value="Due">Due</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="primary-btn" onclick="savePurchase()">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Purchase
+                        </button>
+                    </div>
+
+                    <div class="panel purchase-preview">
+                        <div class="section-title">
+                            <i class="fa-solid fa-calculator"></i>
+                            Purchase Summary
+                        </div>
+
+                        <div class="big-number" id="purchasePreviewTotal">₹0</div>
+                        <p class="muted-text">Selected quantity × purchase price</p>
+
+                        <div class="mini-stat-row">
+                            <span>Current Stock</span>
+                            <strong id="purchaseCurrentStock">0</strong>
+                        </div>
+                        <div class="mini-stat-row">
+                            <span>Stock After Purchase</span>
+                            <strong id="purchaseAfterStock">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Purchase History</h3>
+                            <p>Recent stock purchases</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Reference</th>
+                                    <th>Supplier</th>
+                                    <th>Product</th>
+                                    <th>Qty</th>
+                                    <th>Rate</th>
+                                    <th>Total</th>
+                                    <th>Payment</th>
+                                </tr>
+                            </thead>
+                            <tbody id="purchaseTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================= SUPPLIERS ================= -->
+
+            <div class="page" id="suppliers">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Suppliers</h1>
+                        <p>Manage tyre distributors and purchase parties.</p>
+                    </div>
+
+                    <button class="primary-btn" onclick="openSupplierModal()">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Supplier
+                    </button>
+                </div>
+
+                <div class="supplier-grid" id="supplierGrid"></div>
+            </div>
+
+
+            <!-- ================= VEHICLES ================= -->
+
+            <div class="page" id="vehicles">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Vehicles</h1>
+                        <p>Customer vehicle history from your bills.</p>
+                    </div>
+
+                    <div class="search-box vehicle-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="vehicleSearch" placeholder="Search vehicle number...">
+                    </div>
+                </div>
+
+                <div class="vehicle-grid" id="vehicleGrid"></div>
+            </div>
+
+
+            <!-- ================= LEDGER ================= -->
+
+            <div class="page" id="ledger">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Due / Ledger</h1>
+                        <p>Track customer outstanding balances.</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid ledger-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon red">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+                        <div>
+                            <span>Total Outstanding</span>
+                            <h2 id="ledgerDueTotal">₹0</h2>
+                            <small>Customer dues</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0-1-5M16 14a5 5 0 0 1 5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                        </div>
+                        <div>
+                            <span>Customers With Due</span>
+                            <h2 id="ledgerDueCustomers">0</h2>
+                            <small>Need payment follow-up</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Mobile</th>
+                                    <th>Vehicle</th>
+                                    <th>Total Bill</th>
+                                    <th>Paid</th>
+                                    <th>Due</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ledgerTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================= SETTINGS ================= -->
+
+            <div class="page" id="settings">
+
+                <div class="page-heading">
+                    <div>
+                        <h1>Settings & Backup</h1>
+                        <p>Shop details, invoice settings and data safety.</p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="panel">
+                        <div class="section-title">
+                            <i class="fa-solid fa-store"></i>
+                            Shop / Invoice Details
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Shop Name</label>
+                                <input id="shopNameSetting" type="text" placeholder="Radha Swami Tyre Agency">
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile</label>
+                                <input id="shopMobileSetting" type="tel" placeholder="Shop mobile number">
+                            </div>
+                            <div class="form-group">
+                                <label>GSTIN</label>
+                                <input id="shopGstinSetting" type="text" placeholder="Optional GSTIN">
+                            </div>
+                            <div class="form-group">
+                                <label>Invoice Prefix</label>
+                                <input id="invoicePrefixSetting" type="text" placeholder="RS">
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Shop Address</label>
+                                <textarea id="shopAddressSetting" rows="3" placeholder="Complete shop address"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Invoice Footer / Thank You Message</label>
+                                <textarea id="invoiceFooterSetting" rows="3" placeholder="Thank you for choosing Radha Swami Tyre Agency."></textarea>
+                            </div>
+                        </div>
+
+                        <button class="primary-btn" onclick="saveShopSettings()">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Shop Settings
+                        </button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="section-title">
+                            <i class="fa-solid fa-database"></i>
+                            Backup & Restore
+                        </div>
+
+                        <p class="muted-text">Backup your products, invoices, purchases, suppliers and settings into one JSON file.</p>
+
+                        <div class="settings-actions">
+                            <button class="primary-btn" onclick="backupData()">
+                                <i class="fa-solid fa-download"></i>
+                                Download Backup
+                            </button>
+
+                            <label class="secondary-btn file-btn">
+                                <i class="fa-solid fa-upload"></i>
+                                Restore Backup
+                                <input type="file" id="restoreFile" accept=".json" onchange="restoreData(event)" hidden>
+                            </label>
+
+                            <button class="danger-btn" onclick="clearAllBusinessData()">
+                                <i class="fa-solid fa-trash"></i>
+                                Clear Business Data
+                            </button>
+                        </div>
+
+                        <div class="backup-info">
+                            <div><span>Products</span><strong id="backupProductsCount">0</strong></div>
+                            <div><span>Invoices</span><strong id="backupInvoicesCount">0</strong></div>
+                            <div><span>Purchases</span><strong id="backupPurchasesCount">0</strong></div>
+                            <div><span>Suppliers</span><strong id="backupSuppliersCount">0</strong></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= REPORTS ================= -->
+
+            <div class="page" id="reports">
+
+                <div class="page-heading">
+
+                    <div>
+                        <h1>Business Reports</h1>
+                        <p>Monitor your shop performance.</p>
+                    </div>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+
+                        <div>
+                            <span>Total Sales</span>
+                            <h2 id="reportSales">₹0</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                        </div>
+
+                        <div>
+                            <span>Total Invoices</span>
+                            <h2 id="reportInvoices">0</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+
+                        <div>
+                            <span>Stock Value</span>
+                            <h2 id="reportStock">₹0</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel report-card">
+
+                    <h3>Business Summary</h3>
+
+                    <div class="report-row">
+                        <span>Total products</span>
+                        <strong id="reportProducts">0</strong>
+                    </div>
+
+                    <div class="report-row">
+                        <span>Low stock products</span>
+                        <strong id="reportLowStock">0</strong>
+                    </div>
+
+                    <div class="report-row">
+                        <span>Total customers</span>
+                        <strong id="reportCustomers">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal-overlay" id="productModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Add Product</h2>
+                <p>Add tyre to inventory.</p>
+            </div>
+
+            <button onclick="closeProductModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Product Name</label>
+                <input id="newProductName" placeholder="MRF 195/65 R15">
+            </div>
+
+            <div class="form-group">
+                <label>Brand</label>
+                <input id="newProductBrand" placeholder="MRF">
+            </div>
+
+            <div class="form-group">
+                <label>Size</label>
+                <input id="newProductSize" placeholder="195/65 R15">
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input
+                    type="number"
+                    id="newProductPrice"
+                    placeholder="5500"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Stock</label>
+                <input
+                    type="number"
+                    id="newProductStock"
+                    placeholder="10"
+                >
+            </div>
+
+            <div class="form-group">
+                <label>GST %</label>
+
+                <select id="newProductGST">
+                    <option value="5">5%</option>
+                    <option value="12" selected>12%</option>
+                    <option value="18">18%</option>
+                    <option value="28">28%</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Product Image URL</label>
+
+            <input
+                id="newProductImage"
+                placeholder="https://example.com/tyre.jpg"
+            >
+
+            <small>
+                Tyre ki image ka direct URL yahan paste karein.
+            </small>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                onclick="closeProductModal()"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="primary-btn"
+                onclick="addProduct()"
+            >
+                Add Product
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= SUPPLIER MODAL ================= -->
+
+<div class="modal-overlay" id="supplierModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+            <div>
+                <h2>Add Supplier</h2>
+                <p>Save supplier/distributor details.</p>
+            </div>
+
+            <button onclick="closeSupplierModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Supplier Name</label>
+                <input id="supplierName" placeholder="ABC Tyres Distributor">
+            </div>
+
+            <div class="form-group">
+                <label>Mobile</label>
+                <input id="supplierMobile" maxlength="10" placeholder="10 digit mobile">
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input id="supplierCity" placeholder="Azamgarh">
+            </div>
+
+            <div class="form-group">
+                <label>GSTIN</label>
+                <input id="supplierGSTIN" placeholder="Optional">
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <button class="secondary-btn" onclick="closeSupplierModal()">Cancel</button>
+            <button class="primary-btn" onclick="addSupplier()">Save Supplier</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= INVOICE MODAL ================= -->
+
+<div class="modal-overlay invoice-v5-overlay" id="invoiceModal">
+
+    <div class="invoice-v5-card" id="invoicePreview">
+
+        <button class="invoice-v5-close" onclick="closeInvoice()" aria-label="Close invoice">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+
+        <div class="invoice-v5-top">
+            <div class="invoice-brand-v5">
+                <div class="invoice-logo-v5">
+                    <svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect x="3" y="3" width="42" height="42" rx="12" fill="currentColor"/>
+                        <circle cx="24" cy="24" r="10" fill="none" stroke="#fff" stroke-width="3"/>
+                        <circle cx="24" cy="24" r="3" fill="#fff"/>
+                        <path d="M24 8v5M24 35v5M8 24h5M35 24h5" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 id="previewShopName">RADHA SWAMI TYRE AGENCY</h1>
+                    <p id="previewShopAddress">Parmanpur Tarwa, Azamgarh 276123, UP</p>
+                    <small id="previewShopMeta"></small>
+                </div>
+            </div>
+
+            <div class="invoice-type-v5">
+                <div class="invoice-doc-icon-v5">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                        <path d="M14 3v5h5M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span>TAX INVOICE</span>
+                    <small>Original for customer</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="invoice-v5-divider"></div>
+
+        <div class="invoice-info-v5">
+            <div>
+                <span>Invoice No.</span>
+                <strong id="previewInvoice"></strong>
+            </div>
+            <div>
+                <span>Invoice Date</span>
+                <strong id="previewDate"></strong>
+            </div>
+            <div>
+                <span>Payment</span>
+                <strong id="previewPayment">Cash</strong>
+            </div>
+        </div>
+
+        <div class="bill-to-v5">
+            <div class="bill-to-heading-v5">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <strong>Bill To</strong>
+            </div>
+
+            <div class="invoice-customer-v5">
+                <div><span>Customer Name</span><strong id="previewCustomer"></strong></div>
+                <div><span>Mobile Number</span><strong id="previewMobile"></strong></div>
+            </div>
+        </div>
+
+        <div class="invoice-items-v5">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item / Description</th>
+                        <th>MRP</th>
+                        <th>Qty</th>
+                        <th>GST</th>
+                        <th>Taxable</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="previewItems"></tbody>
+            </table>
+        </div>
+
+        <div class="invoice-footer-v5">
+            <div class="invoice-thanks-v5">
+                <div class="thanks-icon-v5">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="m15 5 3-3 3 3M18 2v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <strong>Thank You!</strong>
+                <p id="previewFooterText">Thank you for choosing Radha Swami Tyre Agency.</p>
+                <small>Computer generated invoice • No signature required</small>
+            </div>
+
+            <div class="invoice-total-box-v5">
+                <div><span>Subtotal</span><strong id="previewSubtotal"></strong></div>
+                <div><span>Discount</span><strong id="previewDiscount"></strong></div>
+                <div><span>CGST</span><strong id="previewCGST"></strong></div>
+                <div><span>SGST</span><strong id="previewSGST"></strong></div>
+                <div><span>Paid</span><strong id="previewPaid">₹0</strong></div>
+                <div><span>Balance Due</span><strong id="previewDue">₹0</strong></div>
+                <div class="invoice-grand-v5"><span>Grand Total</span><strong id="previewTotal"></strong></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="invoice-v5-actions">
+        <button class="print-invoice-v5" onclick="openPrintSettings()">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9V4h12v5M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v6H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+            Print Invoice
+        </button>
+    </div>
+
+</div>
+
+
+<!-- ================= PRINT SETTINGS ================= -->
+<div class="modal-overlay print-settings-overlay" id="printSettingsModal">
+    <div class="modal print-settings-modal">
+        <div class="modal-header">
+            <div>
+                <div class="modal-kicker">PRINT CENTER</div>
+                <h2>Print Settings</h2>
+                <p>Choose paper and layout, then open the real printer dialog.</p>
+            </div>
+            <button onclick="closePrintSettings()" aria-label="Close">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="print-settings-grid">
+            <label>
+                <span>Paper Size</span>
+                <select id="printPaperSize">
+                    <option value="A4">A4 — Standard Invoice</option>
+                    <option value="A5">A5 — Compact Invoice</option>
+                    <option value="80mm">80mm — Thermal Receipt</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Orientation</span>
+                <select id="printOrientation">
+                    <option value="portrait">Portrait</option>
+                    <option value="landscape">Landscape</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Margins</span>
+                <select id="printMargins">
+                    <option value="normal">Normal</option>
+                    <option value="compact">Compact</option>
+                    <option value="none">None</option>
+                </select>
+            </label>
+
+            <label>
+                <span>Invoice Format</span>
+                <select id="printFormat">
+                    <option value="professional">Professional</option>
+                    <option value="simple">Simple</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="print-preview-note">
+            <div class="print-preview-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9V4h12v5M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v6H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div>
+                <strong>Real printer dialog</strong>
+                <span>Print Now par Windows/Chrome ka actual printer selection &amp; print dialog khulega.</span>
+            </div>
+        </div>
+
+        <div class="modal-actions print-actions">
+            <button class="secondary-btn" onclick="closePrintSettings()">Cancel</button>
+            <button class="primary-btn print-now-btn" onclick="performRealPrint()">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9V4h12v5M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v6H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+                Print Now
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script src="app.js"></script>
+
+    <!-- ================= SELECTED PRODUCTS DRAWER ================= -->
+    <div class="selected-drawer-backdrop-v6" id="selectedDrawerBackdrop" onclick="closeSelectedProductsDrawer()"></div>
+    <aside class="selected-drawer-v6" id="selectedProductsDrawer" aria-hidden="true">
+        <div class="selected-drawer-head-v6">
+            <div>
+                <span>QUICK CHECKOUT</span>
+                <h2>Selected Products</h2>
+            </div>
+            <button class="selected-drawer-close-v6" onclick="closeSelectedProductsDrawer()" aria-label="Close selected products">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+        <div class="selected-drawer-list-v6" id="selectedProductsList"></div>
+        <div class="selected-drawer-footer-v6">
+            <div><span>Selected</span><strong id="selectedDrawerCount">0 items</strong></div>
+            <button onclick="checkoutSelectedProducts()">
+                Checkout Selected
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </aside>
+</body>
+</html>

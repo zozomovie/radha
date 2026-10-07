@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Products | Radha Swami Tyre Agency</title><link rel="stylesheet" href="products.css"></head>
+<body>
+<div class="products-app">
+<div class="page-backdrop" id="pageBackdrop"></div>
+<aside class="product-sidebar" id="productSidebar">
+<button class="sidebar-x" id="sidebarX"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<div class="side-brand"><div class="side-logo"><svg viewBox="0 0 48 48"><rect x="3" y="3" width="42" height="42" rx="12"/><circle cx="24" cy="24" r="10" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="3" fill="#fff"/></svg></div><div><strong>Radha Swami</strong><span>Tyre Agency</span></div></div>
+<nav><a href="index.html">Dashboard</a><a href="index.html#billing">New Bill</a><a class="active" href="products.html">Products</a><a href="index.html#inventory">Inventory</a><a href="index.html#purchase">Purchase</a><a href="index.html#suppliers">Suppliers</a><a href="index.html#customers">Customers</a><a href="index.html#invoices">Invoices</a><a href="index.html#reports">Reports</a></nav>
+</aside>
+<header class="products-header">
+<button class="menu-trigger" id="menuTrigger"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<div class="header-brand"><strong>RADHA SWAMI TYRE AGENCY</strong><span>Billing &amp; Inventory Management</span></div>
+<div class="header-right"><span id="productDate"></span><div class="owner"><b>RS</b><span>Radha Swami<small>Owner</small></span></div></div>
+</header>
+<main class="products-main">
+<section class="catalog-hero"><div><div class="eyebrow">PRODUCT CATALOG</div><h1>Tyres &amp; Batteries</h1><p>Browse shop products, check MRP and select items for a new bill.</p></div>
+<div class="catalog-stats"><div><strong id="totalCount">36</strong><span>Products</span></div><div><strong id="selectedCountTop">0</strong><span>Selected</span></div></div></section>
+<section class="catalog-tools"><label class="search-box"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input id="searchProducts" placeholder="Search product, brand or size..."></label>
+<div class="filters" id="filters"><button class="filter active" data-cat="All">All</button><button class="filter" data-cat="Bike Tyres">Bike Tyres</button><button class="filter" data-cat="Car Tyres">Car Tyres</button><button class="filter" data-cat="Bike Battery">Bike Battery</button><button class="filter" data-cat="Car Battery">Car Battery</button></div></section>
+<div class="catalog-line"><span id="resultsText">36 products</span><span>Click any card to select / unselect</span></div>
+<section class="product-grid" id="productGrid"></section>
+</main>
+<button class="selected-fab" id="selectedFab"><span class="fab-icon"><svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Selected Items</span><b id="selectedBadge">0</b></button>
+<aside class="selected-drawer" id="selectedDrawer"><div class="drawer-head"><div><span>QUICK CHECKOUT</span><h2>Selected Products</h2><small id="drawerCount">0 items selected</small></div><button id="drawerClose"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div><div class="selected-list" id="selectedList"></div><div class="drawer-footer"><div><span>Total selected</span><strong id="selectedTotal">₹0</strong></div><button id="checkoutBtn">Checkout Selected <svg viewBox="0 0 24 24"><path d="M5 12h13M13 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></aside>
+</div><script src="products.js"></script></body></html>
