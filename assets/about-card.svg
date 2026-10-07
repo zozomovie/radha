@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="220">
-<rect width="1100" height="220" rx="20" fill="#0b111a" stroke="#202d3d"/>
-<text x="36" y="48" fill="#2196f3" font-family="monospace" font-size="13" font-weight="700">02 / ABOUT ME</text>
-<text x="36" y="92" fill="#fff" font-family="Arial" font-size="25" font-weight="700">I BUILD USEFUL THINGS.</text>
-<text x="36" y="126" fill="#aab6c5" font-family="Arial" font-size="16">Web development, Python, JavaScript, APIs, databases</text>
-<text x="36" y="151" fill="#aab6c5" font-family="Arial" font-size="16">and AI / automation — learning by turning ideas into real products.</text>
-<rect x="36" y="180" width="1028" height="2" fill="#1d2a3b"/>
-<text x="36" y="205" fill="#ff1744" font-family="monospace" font-size="12">CURIOUS • PRACTICAL • ALWAYS BUILDING</text>
-</svg>
