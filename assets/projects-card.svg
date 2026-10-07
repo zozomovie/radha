@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="390">
+<rect width="1100" height="390" rx="20" fill="#0b111a" stroke="#202d3d"/>
+<text x="36" y="48" fill="#ff1744" font-family="monospace" font-size="13" font-weight="700">04 / SELECTED WORK</text>
+<g transform="translate(36 75)">
+ <rect width="495" height="125" rx="14" fill="#0f1723" stroke="#223249"/>
+ <text x="22" y="36" fill="#fff" font-family="Arial" font-size="20" font-weight="700">🎬 ZOZO MOVIES</text>
+ <text x="22" y="64" fill="#8f9db0" font-family="Arial" font-size="13">Movie / web-series platform • TMDB • Supabase</text>
+ <text x="22" y="94" fill="#2196f3" font-family="monospace" font-size="12">HTML  CSS  JS  API  DATABASE</text>
+</g>
+<g transform="translate(568 75)">
+ <rect width="495" height="125" rx="14" fill="#0f1723" stroke="#223249"/>
+ <text x="22" y="36" fill="#fff" font-family="Arial" font-size="20" font-weight="700">📚 CBPG RESULT PORTAL</text>
+ <text x="22" y="64" fill="#8f9db0" font-family="Arial" font-size="13">Dynamic result search • PDFs • Apps Script</text>
+ <text x="22" y="94" fill="#2196f3" font-family="monospace" font-size="12">HTML  CSS  JS  SHEETS  APPS SCRIPT</text>
+</g>
+<g transform="translate(36 225)">
+ <rect width="495" height="125" rx="14" fill="#0f1723" stroke="#223249"/>
+ <text x="22" y="36" fill="#fff" font-family="Arial" font-size="20" font-weight="700">🛒 MYSTORE</text>
+ <text x="22" y="64" fill="#8f9db0" font-family="Arial" font-size="13">E-commerce • cart • addresses • orders</text>
+ <text x="22" y="94" fill="#ff1744" font-family="monospace" font-size="12">JAVASCRIPT  SUPABASE  API</text>
+</g>
+<g transform="translate(568 225)">
+ <rect width="495" height="125" rx="14" fill="#0f1723" stroke="#223249"/>
+ <text x="22" y="36" fill="#fff" font-family="Arial" font-size="20" font-weight="700">🤖 SANTA AI</text>
+ <text x="22" y="64" fill="#8f9db0" font-family="Arial" font-size="13">Personal assistant • AI • automation</text>
+ <text x="22" y="94" fill="#ff1744" font-family="monospace" font-size="12">PYTHON  JAVASCRIPT  AI  APIs</text>
+</g>
+</svg>
