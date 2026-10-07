@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#04060a"/><stop offset=".58" stop-color="#0a111b"/><stop offset="1" stop-color="#16070d"/></linearGradient>
+ <linearGradient id="acc"><stop stop-color="#00a8ff"/><stop offset=".55" stop-color="#5d73ff"/><stop offset="1" stop-color="#ff1744"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="scan"><stop stop-color="#00a8ff" stop-opacity="0"/><stop offset=".5" stop-color="#00a8ff" stop-opacity=".75"/><stop offset="1" stop-color="#00a8ff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1200" height="430" rx="28" fill="url(#bg)"/>
+<g opacity=".055" stroke="#9fb1c8"><path d="M0 70H1200M0 140H1200M0 210H1200M0 280H1200M0 350H1200"/><path d="M100 0V430M200 0V430M300 0V430M400 0V430M500 0V430M600 0V430M700 0V430M800 0V430M900 0V430M1000 0V430M1100 0V430"/></g>
+<rect x="-180" y="0" width="120" height="430" fill="url(#scan)" opacity=".15" transform="skewX(-18)">
+ <animate attributeName="x" from="-250" to="1250" dur="4.5s" repeatCount="indefinite"/>
+</rect>
+<path d="M0 385L1200 48" stroke="url(#acc)" stroke-width="2"/>
+<text x="72" y="58" fill="#70829a" font-family="monospace" font-size="13" letter-spacing="4">SURAJ PRAJAPATI / DEVELOPER PROFILE</text>
+<text x="72" y="150" fill="#fff" font-family="Arial" font-size="64" font-weight="800">IDEAS.</text>
+<text x="72" y="218" fill="#2196f3" font-family="Arial" font-size="64" font-weight="800">BUILT</text>
+<text x="72" y="286" fill="#ff1744" font-family="Arial" font-size="64" font-weight="800">DIFFERENT.</text>
+<rect x="75" y="310" width="500" height="3" fill="url(#acc)" filter="url(#glow)"/>
+<text x="76" y="346" fill="#b9c4d3" font-family="Arial" font-size="16" letter-spacing="2">WEB • PYTHON • JAVASCRIPT • AI</text>
+<g transform="translate(805 78)">
+<rect width="320" height="235" rx="18" fill="#0a1019" stroke="#26354a"/>
+<text x="25" y="42" fill="#66778d" font-family="monospace" font-size="11">01  STATUS</text>
+<circle cx="282" cy="38" r="6" fill="#ff1744"><animate attributeName="opacity" values="1;.25;1" dur="1.2s" repeatCount="indefinite"/></circle>
+<text x="25" y="78" fill="#2196f3" font-family="monospace" font-size="23" font-weight="700">BUILDING</text>
+<text x="25" y="117" fill="#66778d" font-family="monospace" font-size="11">02  CORE STACK</text>
+<text x="25" y="145" fill="#fff" font-family="monospace" font-size="14">HTML / CSS / JAVASCRIPT</text>
+<text x="25" y="171" fill="#fff" font-family="monospace" font-size="14">PYTHON / SUPABASE</text>
+<text x="25" y="197" fill="#fff" font-family="monospace" font-size="14">APIs / AI / AUTOMATION</text>
+<text x="25" y="218" fill="#ff1744" font-family="monospace" font-size="11">ALWAYS LEARNING</text>
+</g>
+</svg>
